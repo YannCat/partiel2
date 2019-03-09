@@ -84,7 +84,7 @@ const std::uint64_t SlideShow::getRandomNumber() {
     * TODO: Expliquez dans les commentaires 
     * 
     * - Pourquoi on utilise le mot clé 'static' ici ? (Contrairement au code en ligne)
-    *
+    *   Pour que la variable n'existe qu'en un seul exemplaire.
     * - Modifiez le code pour choisir les nombres aléatoires jusqu'au nombre de slides
     */
     
