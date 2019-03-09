@@ -19,6 +19,8 @@
 #include <iostream>
 #include <string>
 #include <cstdint> // for uint64_t, uint8_t, ...
+#include <thread>  //sleep_until
+#include <chrono>  //seconds, now, ...
 
 class SlideShow {
     

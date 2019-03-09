@@ -36,8 +36,10 @@ int main(int argc, char **argv) {
 			string chemin = (string)argv[1];
 			SlideShow lemien(chemin.c_str());
 			lemien.init();
-			for(int i=0;i<20;i++){
-				lemien.displayRandomSlide(&cout);	// on test si main tiens bien compte du fichier passé en argument en affichant une ligne random
+			while(1){
+				lemien.displayRandomSlide(&cout);
+				chrono::system_clock::time_point timePoint = chrono::system_clock::now() + std::chrono::seconds(2);	// https://thispointer.com/how-to-put-a-thread-to-sleep-in-c11-sleep_for-sleep_until/
+				this_thread::sleep_until(timePoint);
 			}
 		}
 	}
