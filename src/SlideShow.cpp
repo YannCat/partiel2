@@ -97,6 +97,16 @@ const std::uint8_t SlideShow::displayRandomSlide(std::ostream* out) {
         cerr << "Attention: appeler d'abord init sur objet SlideShow." << endl;
         rc = 1; // code d'erreur si non initialisé
     }
+    else{
+        uint64_t random = getRandomNumber();
+        string slide;
+        
+        for(uint64_t i = 0 ; i < random; i++) {
+            getline(this->_filestream, slide);
+        }
+        *out<<slide<<endl;
+        rc = 0;
+    }
     
     /*
     * TODO: complétez le code ...
@@ -105,7 +115,7 @@ const std::uint8_t SlideShow::displayRandomSlide(std::ostream* out) {
     * le contenu d'une ligne du fichier
     * correspondant au nombre aléatoire obtenu
     */
-    *out << "completez le code ... et enlevez ceci!" << endl;
+    *out << endl;
     
     return rc;
 }

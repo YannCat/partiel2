@@ -58,5 +58,5 @@ TEST_CASE("Test Error init", "[SlideShow][init]") {
     /*
     * TODO: Suivre les recommandations du texte comparé ci-dessus
     */
-    CHECK( sout.str() == "completez le code ... et enlevez ceci!\n" );
+    CHECK( sout.str() == "\n" );
 }
