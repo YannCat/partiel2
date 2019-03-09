@@ -33,7 +33,11 @@ TEST_CASE("Test Random Number", "[SlideShow][RandomNumber]") {
     REQUIRE( ss.init() );
     
     for(int n=0; n<3; ++n) {
-        CHECK( 0 > ss.getRandomNumber() );
+        uint64_t aleat = ss.getRandomNumber();
+        uint64_t nbslide = ss.getNumberOfSlides();
+
+        CHECK(aleat <= nbslide);
+        CHECK(aleat >= 1);
         // Quelque soit le nombre retourné par getRandomNumber, 
         // il doit être inférieur au nombre de lignes dans le fichier
         

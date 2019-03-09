@@ -78,8 +78,8 @@ const std::uint64_t SlideShow::getRandomNumber() {
     CHECK_IF_INITIALISED();
     
     static random_device rd;
-    static mt19937 gen; // générateur
-    static uniform_int_distribution<> dis(1, 6);
+    static mt19937 gen(rd()); // générateur
+    static uniform_int_distribution<> dis(1, this->_nbFilelines);
     /*
     * TODO: Expliquez dans les commentaires 
     * 
