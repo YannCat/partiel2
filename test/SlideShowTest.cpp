@@ -55,8 +55,18 @@ TEST_CASE("Test Error init", "[SlideShow][init]") {
 
     ostringstream sout;
     CHECK( 1 == ss.displayRandomSlide(&sout) );
-    /*
-    * TODO: Suivre les recommandations du texte comparé ci-dessus
-    */
     CHECK( sout.str() == "\n" );
+}
+
+TEST_CASE("Test Display Random Slide","[SlideShow][displayRandomSlide]"){
+    
+    SlideShow ss("test/data/small.txt");
+    
+    REQUIRE(ss.init());
+    
+    ostringstream test;                             // Variable compatible avec osstream (argument de la fonction displayRandomSlide) et string (qui va nous permettre de faire les test)
+
+    REQUIRE(ss.displayRandomSlide(&test) == 0);     // On vérifie que la fonction displayRandomSlide retourne bien 0 (si c'est OK)
+    string sortie = test.str();
+    CHECK(sortie.find("IMG_")!= string::npos);      // Toute les lignes du fichier small.txt commence par IMG_, on verifie que la ligne récupéré commence bien par ça
 }
