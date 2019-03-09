@@ -100,7 +100,8 @@ const std::uint8_t SlideShow::displayRandomSlide(std::ostream* out) {
     else{
         uint64_t random = getRandomNumber();
         string slide;
-        
+        this->_filestream.seekg(0,ios::beg);        // Replace le curseur au début du fichier
+
         for(uint64_t i = 0 ; i < random; i++) {
             getline(this->_filestream, slide);
         }

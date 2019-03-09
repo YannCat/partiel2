@@ -36,7 +36,9 @@ int main(int argc, char **argv) {
 			string chemin = (string)argv[1];
 			SlideShow lemien(chemin.c_str());
 			lemien.init();
-			lemien.displayRandomSlide(&cout);	// on test si main tiens bien compte du fichier passé en argument en affichant une ligne random
+			for(int i=0;i<20;i++){
+				lemien.displayRandomSlide(&cout);	// on test si main tiens bien compte du fichier passé en argument en affichant une ligne random
+			}
 		}
 	}
     
