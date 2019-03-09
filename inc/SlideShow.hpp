@@ -56,6 +56,7 @@ class SlideShow {
         /*
         * TODO: Expliquez dans les commentaires
         * - À quoi ça sert d'avoir le constructeur par défaut en privé ?
+        *   Empêcher la création de multiples instances de la classe.
         */
         //@}
         
