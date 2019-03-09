@@ -30,6 +30,15 @@ int main(int argc, char **argv) {
     * - utiliser un objet SlideShow pour afficher aléatoirement sur la sortie standard,
     *   un nom de fichier (image) contenu dans le fichier passé en argument
     */
+
+    if(argc >= 1){
+		if(argv[1] != (char*)""){
+			string chemin = (string)argv[1];
+			SlideShow lemien(chemin.c_str());
+			lemien.init();
+			lemien.displayRandomSlide(&cout);	// on test si main tiens bien compte du fichier passé en argument en affichant une ligne random
+		}
+	}
     
     return 0;
 }
